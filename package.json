@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "node -r ts-node/register --env-file=.env src/index.ts"
+  },
+  "dependencies": {
+    "openai": "^4.56.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
