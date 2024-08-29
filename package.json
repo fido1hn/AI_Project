@@ -3,6 +3,7 @@
     "start": "node -r ts-node/register --env-file=.env src/index.ts"
   },
   "dependencies": {
+    "@huggingface/inference": "^2.8.0",
     "openai": "^4.56.1"
   },
   "devDependencies": {

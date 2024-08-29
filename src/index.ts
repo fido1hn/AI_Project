@@ -1,18 +1,14 @@
-import { OpenAI } from 'openai';
+import { HfInference } from '@huggingface/inference';
 
-const openai = new OpenAI();
+const inference = new HfInference(process.env.HF_TOKEN);
 
-async function main() {
-  const response = await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo',
-    messages: [
-      {
-        role: 'user',
-        content: 'Who is the most famous rapper of all time?',
-      },
-    ],
+async function embed() {
+  const output = await inference.featureExtraction({
+    inputs: ['My cool embeddings'],
+    model: 'BAAI/bge-small-en-v1.5',
   });
-  console.log(response.choices[0].message.content);
+
+  console.log(output);
 }
 
-main();
+embed();
